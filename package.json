@@ -6,7 +6,9 @@
   "dependencies": {
     "vue": "^2.6.14"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
