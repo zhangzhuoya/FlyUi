@@ -1,5 +1,5 @@
 <template>
-  <button class="f-button" :class="type">
+  <button class="f-button" :class="type" @click="$emit('click')">
     <div class="icon-container" :class="iconPosition">
       <Icon name="loading" class="loading" v-if="icon === 'loading'"></Icon>
       <Icon :name="icon" v-if="icon && icon !== 'loading'"></Icon>
