@@ -27,6 +27,13 @@ export default {
     "icon-position": {
       type: String,
       default: "left",
+      validator: function (value) {
+        if (value === "left" || value === "right") {
+          return true;
+        } else {
+          console.warn("iconPosition mast be left or right");
+        }
+      },
     },
   },
 };
