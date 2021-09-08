@@ -3,7 +3,7 @@
     <Button type="warning" icon="bianji" icon-position="left">警告</Button>
     <Button type="danger" icon="bianji" icon-position="right">危险</Button>
     <Button>默认按钮</Button>
-    <Button :isLoading="true">默认按钮</Button>
+    <Button icon="loading">默认按钮</Button>
   </div>
 </template>
 

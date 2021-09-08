@@ -1,9 +1,8 @@
 <template>
   <button class="f-button" :class="type">
     <div class="icon-container" :class="iconPosition">
-      <svg class="icon" v-if="icon">
-        <use :xlink:href="`#icon-${icon}`"></use>
-      </svg>
+      <Icon name="loading" class="loading" v-if="icon === 'loading'"></Icon>
+      <Icon :name="icon" v-if="icon && icon !== 'loading'"></Icon>
       <div class="icon-font">
         <slot></slot>
       </div>
@@ -11,7 +10,11 @@
   </button>
 </template>
 <script>
+import Icon from "./icon.vue";
 export default {
+  components: {
+    Icon,
+  },
   props: {
     type: {
       type: String,
@@ -23,16 +26,20 @@ export default {
     },
     "icon-position": {
       type: String,
-      default:"left",
+      default: "left",
     },
-    isLoading: {
-      type: Boolean,
-      default: false
-    }
   },
 };
 </script>
 <style lang="scss" scoped>
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .f-button {
   font-size: var(--font-size);
   height: var(--button-height);
@@ -76,12 +83,8 @@ export default {
         margin-left: 0.3em;
       }
     }
-    .icon {
-      width: 1em;
-      height: 1em;
-      vertical-align: -0.15em;
-      fill: currentColor;
-      overflow: hidden;
+    .loading {
+      animation: spin 2s infinite linear;
     }
     .icon-font {
     }
