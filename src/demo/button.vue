@@ -24,7 +24,7 @@ export default {
       type: String,
       default: "",
     },
-    "icon-position": {
+    iconPosition: {
       type: String,
       default: "left",
       validator: function (value) {
@@ -79,13 +79,13 @@ export default {
     align-items: center;
     justify-content: center;
     &.left {
-      .icon {
+      svg {
         order: 0;
         margin-right: 0.3em;
       }
     }
     &.right {
-      .icon {
+      svg {
         order: 1;
         margin-left: 0.3em;
       }

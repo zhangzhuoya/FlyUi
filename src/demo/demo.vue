@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Button type="warning" icon="bianji" icon-position="left">警告</Button>
-    <Button type="danger" icon="bianji" icon-position="right">危险</Button>
+    <Button type="warning" icon="bianji" iconPosition="left">警告</Button>
+    <Button type="danger" icon="bianji" iconPosition="right">危险</Button>
     <Button>默认按钮</Button>
     <Button icon="loading">默认按钮</Button>
     <button-group>
