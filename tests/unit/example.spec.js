@@ -51,6 +51,7 @@ import Vue from "vue";
 //   vm.$destroy();
 // }
 {
+  1234
   // mock
   const Constructor = Vue.extend(Button);
   const vm = new Constructor({
