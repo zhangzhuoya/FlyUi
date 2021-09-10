@@ -1,12 +1,12 @@
 {
-  "name": "flyui",
+  "name": "flyuivue2",
   "version": "1.0.0",
   "description": "vueUi组件库",
   "main": "index.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit",
+    "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
     "core-js": "^3.17.2",
