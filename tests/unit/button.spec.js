@@ -1,8 +1,8 @@
 import chai from "chai";
 import spies from "chai-spies";
 // import { shallowMount } from "@vue/test-utils";
-import Button from "@/demo/button.vue";
-import sinon from "sinon";
+import Button from "@/button.vue";
+// import sinon from "sinon";
 chai.use(spies);
 const expect = chai.expect;
 import Vue from "vue";
@@ -57,21 +57,21 @@ describe("Button", () => {
   //   vm.$el.remove();
   //   vm.$destroy();
   // });
-  it("点击 button 触发 click 事件", () => {
-    const Constructor = Vue.extend(Button);
-    const vm = new Constructor({
-      propsData: {
-        icon: "setting",
-      },
-    });
-    vm.$mount();
-    // let spy = chai.spy(function () {});
-    let callback = sinon.fake();
-    vm.$on("click", callback);
-    let button = vm.$el;
-    button.click();
-    expect(callback).to.have.been.called;
-  });
+  // it("点击 button 触发 click 事件", () => {
+  //   const Constructor = Vue.extend(Button);
+  //   const vm = new Constructor({
+  //     propsData: {
+  //       icon: "setting",
+  //     },
+  //   });
+  //   vm.$mount();
+  //   // let spy = chai.spy(function () {});
+  //   let callback = sinon.fake();
+  //   vm.$on("click", callback);
+  //   let button = vm.$el;
+  //   button.click();
+  //   expect(callback).to.have.been.called;
+  // });
 });
 // {
 //   const div = document.createElement("div");
