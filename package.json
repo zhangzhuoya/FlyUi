@@ -1,11 +1,11 @@
 {
   "name": "flyuivue2",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "vueUi组件库",
-  "main": "index.js",
+  "main": "dist/flyui.umd.min.js",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "serve": "vue-cli-service serve ",
+    "build": "vue-cli-service build --target lib --name flyui src/index.js",
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
