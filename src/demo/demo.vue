@@ -14,6 +14,23 @@
     <Input value="1234" error="姓名不能少于5个字"/>
     <Input v-model="message"/>
     {{message}}
+    <h2>布局</h2>
+    <f-row>
+      <f-col span="24">1</f-col>
+      <f-col>2</f-col>
+      <f-col>3</f-col>
+      <f-col>4</f-col>
+      <f-col>5</f-col>
+    </f-row>
+
+    <f-row>
+      <f-col>1</f-col>
+      <f-col>2</f-col>
+    </f-row>
+    <f-row>
+      <f-col>1</f-col>
+      <f-col>9</f-col>
+    </f-row>
 
   </div>
 </template>
@@ -22,11 +39,15 @@
 import Button from "@/button.vue";
 import ButtonGroup from "@/buttonGroup.vue";
 import Input from '@/input.vue'
+import FCol from '@/col.vue'
+import FRow from '@/row.vue'
 export default {
   components: {
     Button,
     ButtonGroup,
-    Input
+    Input,
+    FCol,
+    FRow
   },
   data() {
     return {
