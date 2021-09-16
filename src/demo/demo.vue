@@ -12,6 +12,9 @@
     <Input value="1234" disabled readonly/>
     <Input value="1234" readonly/>
     <Input value="1234" error="姓名不能少于5个字"/>
+    <Input v-model="message"/>
+    {{message}}
+
   </div>
 </template>
 
@@ -25,6 +28,11 @@ export default {
     ButtonGroup,
     Input
   },
+  data() {
+    return {
+      message:""
+    }
+  }
 };
 </script>
 
