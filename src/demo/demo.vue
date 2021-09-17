@@ -15,12 +15,11 @@
     <Input v-model="message"/>
     {{message}}
     <h2>布局</h2>
-    <f-row gutter="12">
-      <f-col span="2">1</f-col>
-      <f-col span="2" offset="2">2</f-col>
-      <f-col span="2" offset="2">2</f-col>
+    <f-row gutter="20">
+      <f-col span="4">1</f-col>
+      <f-col span="14" >2</f-col>
     </f-row>
-
+<!-- 
     <f-row>
       <f-col>1</f-col>
       <f-col>2</f-col>
@@ -28,7 +27,7 @@
     <f-row>
       <f-col>1</f-col>
       <f-col>9</f-col>
-    </f-row>
+    </f-row> -->
 
   </div>
 </template>

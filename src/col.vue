@@ -2,6 +2,7 @@
    <div 
      class="col" 
      :class="[span&&`col-${span}`, offset&&`offset-${offset}`]"
+     :style="{marginLeft: gutter/2 +'px',marginRight: gutter/2 +'px'}"
      >
        <slot></slot>
    </div>
@@ -16,8 +17,13 @@ export default {
         offset: {
             type: [Number, String],
         },
-        gutter: {
-            type: [Number, String]
+        // gutter: {
+        //     type: [Number, String]
+        // }
+    },
+    data() {
+        return {
+            gutter: 0
         }
     }
 
