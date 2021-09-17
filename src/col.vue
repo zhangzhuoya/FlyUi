@@ -1,8 +1,8 @@
 <template>
    <div 
      class="col" 
-     :class="[span&&`col-${span}`, offset&&`offset-${offset}`]"
-     :style="{marginLeft: gutter/2 +'px',marginRight: gutter/2 +'px'}"
+     :class="colClasses"
+     :style="colStyle"
      >
        <slot></slot>
    </div>
@@ -17,13 +17,22 @@ export default {
         offset: {
             type: [Number, String],
         },
-        // gutter: {
-        //     type: [Number, String]
-        // }
     },
     data() {
         return {
             gutter: 0
+        }
+    },
+    computed: {
+        colClasses(){
+            let {span,offset} = this
+            return [span&&`col-${span}`, offset&&`offset-${offset}`]
+        },
+        colStyle() {
+            return {
+                marginLeft: this.gutter/2 +'px',
+                marginRight: this.gutter/2 +'px'
+            }
         }
     }
 
