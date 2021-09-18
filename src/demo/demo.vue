@@ -15,19 +15,30 @@
     <Input v-model="message"/>
     {{message}}
     <h2>布局</h2>
-    <f-row gutter="20">
-      <f-col span="4">1</f-col>
-      <f-col span="14" >2</f-col>
-    </f-row>
-<!-- 
     <f-row>
-      <f-col>1</f-col>
-      <f-col>2</f-col>
+      <f-col span="4">2</f-col>
+      <f-col span="20" >22</f-col>
+    </f-row>
+
+    <f-row>
+      <f-col 
+        span="2" 
+        :phone="{span: 24}" 
+        :ipad="{span: 8}" 
+        :narrow-pc="{span:4}" 
+        :pc="{span:2}"
+        :wide-pc="{span:1}"
+        >1</f-col>
+      <f-col span="22">11</f-col>
     </f-row>
     <f-row>
-      <f-col>1</f-col>
-      <f-col>9</f-col>
-    </f-row> -->
+      <f-col span="8">4</f-col>
+      <f-col span="16">20</f-col>
+    </f-row>
+    <f-row>
+      <f-col span="10">5</f-col>
+      <f-col span="14">19</f-col>
+    </f-row>
 
   </div>
 </template>
@@ -54,4 +65,6 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="less" scoped>
+
+</style>
