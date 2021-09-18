@@ -41,13 +41,14 @@ export default {
     computed: {
         colClasses(){
             let {span,offset,phone,ipad,narrowPc,pc, widePc} = this
-            return [span&&`col-${span}`, 
-                    offset&&`offset-${offset}`,
-                    phone && `col-phone-${phone.span}`,
-                    ipad && `col-ipad-${ipad.span}`,
-                    narrowPc && `col-narrow-pc-${narrowPc.span}`,
-                    pc && `col-pc-${pc.span}`,
-                    widePc && `col-wide-pc-${widePc.span}`
+            let s = this.setClasses
+            return [
+                ...s({span,offset},''),
+                ...s(phone,'phone-'),
+                ...s(ipad,'ipad-'),
+                ...s(narrowPc,'narrowPc-'),
+                ...s(pc,'pc-'),
+                ...s(widePc,'widePc-'),
                     ]
         },
         colStyle() {
@@ -55,6 +56,17 @@ export default {
                 marginLeft: this.gutter/2 +'px',
                 marginRight: this.gutter/2 +'px'
             }
+        }
+    },
+    methods:{
+        setClasses(obj,title='') {
+            if (!obj) {
+                return []
+            }
+            let arr = []
+            if (obj.offset) arr.push(`offset-${title}${obj.offset}`);
+            if (obj.span) arr.push(`col-${title}${obj.span}`);
+            return arr
         }
     }
 
