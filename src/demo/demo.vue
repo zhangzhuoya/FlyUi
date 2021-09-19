@@ -45,7 +45,7 @@
 <Layout>
   <Header style="width:100%;height:100px;background:#eee">header</Header>
   <Layout>
-    <Aside>aside</Aside>
+    <Aside style="width:300px;height:300px;background:#eee">aside</Aside>
     <Content>content</Content>
   </Layout>
   <Footer>footer</Footer>
