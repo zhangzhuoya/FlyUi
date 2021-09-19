@@ -9,7 +9,7 @@
       <Button>更多</Button>
       <Button>下一页</Button>
     </button-group> -->
-    <Input value="1234" disabled readonly/>
+    <!-- <Input value="1234" disabled readonly/>
     <Input value="1234" readonly/>
     <Input value="1234" error="姓名不能少于5个字"/>
     <Input v-model="message"/>
@@ -38,8 +38,18 @@
     <f-row>
       <f-col span="10">5</f-col>
       <f-col span="14">19</f-col>
-    </f-row>
+    </f-row> -->
 
+
+<h3>布局</h3>
+<Layout>
+  <Header style="width:100%;height:100px;background:#eee">header</Header>
+  <Layout>
+    <Aside>aside</Aside>
+    <Content>content</Content>
+  </Layout>
+  <Footer>footer</Footer>
+</Layout>
   </div>
 </template>
 
@@ -49,13 +59,25 @@ import ButtonGroup from "@/buttonGroup.vue";
 import Input from '@/input.vue'
 import FCol from '@/col.vue'
 import FRow from '@/row.vue'
+import Footer from '@/footer.vue'
+import Header from '@/header.vue'
+import Aside from '@/aside.vue'
+import Content from '@/content.vue'
+import Layout from '@/layout.vue';
+
+
 export default {
   components: {
     Button,
     ButtonGroup,
     Input,
     FCol,
-    FRow
+    FRow,
+    Footer,
+    Header,
+    Aside,
+    Content,
+    Layout
   },
   data() {
     return {
