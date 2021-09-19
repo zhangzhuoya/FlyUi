@@ -41,7 +41,7 @@
     </f-row> -->
 
 
-<h3>布局</h3>
+<!-- <h3>布局</h3>
 <Layout>
   <Header style="width:100%;height:100px;background:#eee">header</Header>
   <Layout>
@@ -50,6 +50,8 @@
   </Layout>
   <Footer>footer</Footer>
 </Layout>
+<Toast></Toast> -->
+<Button @click="handlemessage"> dianji</Button>
   </div>
 </template>
 
@@ -64,7 +66,10 @@ import Header from '@/header.vue'
 import Aside from '@/aside.vue'
 import Content from '@/content.vue'
 import Layout from '@/layout.vue';
-
+import Toast from '@/toast.vue'
+import plugin from '@/plugin';
+import Vue from 'vue'
+Vue.use(plugin)
 
 export default {
   components: {
@@ -77,11 +82,20 @@ export default {
     Header,
     Aside,
     Content,
-    Layout
+    Layout,
+    Toast
   },
   data() {
     return {
       message:""
+    }
+  },
+  mounted() {
+    console.log(this.$toast());
+  },
+  methods:{
+    handlemessage(){
+      this.$toast(1111)
     }
   }
 };
