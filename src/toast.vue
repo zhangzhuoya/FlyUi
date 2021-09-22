@@ -1,16 +1,53 @@
 <template>
     <div class="toast">
         <slot></slot>
+        <div v-if="closeButton.text">{{closeButton.text}}</div>
     </div>
 </template>
 
 <script>
 export default {
     name:"FlyToast",
-    mounted() {
-        // console.log(this.$toast);
-    }
+    // data() {
+    //     return {
+    //         isAutoVisible: true
+    //     }
+    // },
+    props: {
+        autoClose: {
+            type: Boolean,
+            default: true
+        },
+        autoDelay: {
+            type: Number,
+            default: 1
+        },
+        closeButton: {
+            type: Object,
+            default:()=>{
+                return {
+                    text:"",
+                    callback(toast){
+                        toast.close()
 
+                    }
+                }
+            }
+        }
+    },
+    mounted() {
+        if (this.autoClose) {
+            setTimeout(()=>{
+                this.close()
+            },this.autoDelay*1000)
+        }
+    },
+    methods: {
+        close() {
+            this.$el.remove();
+            this.$destroy();
+        }
+    }
 }
 </script>
 

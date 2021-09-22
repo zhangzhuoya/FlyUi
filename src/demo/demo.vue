@@ -91,10 +91,11 @@ export default {
     }
   },
   mounted() {
-    console.log(this.$toast());
+    // console.log(this.$toast());
   },
   methods:{
     handlemessage(){
+      console.log(this);
       this.$toast(1111)
     }
   }
