@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="height:1000px">
     <!-- <Button type="warning" icon="bianji" iconPosition="left">警告</Button>
     <Button type="danger" icon="bianji" iconPosition="right">危险</Button>
     <Button>默认按钮</Button>
@@ -98,6 +98,7 @@ export default {
       console.log(this);
       this.$toast('一点点就撒开了梵蒂冈啊的冠军联<h3>ee</h3>赛的感觉爱的感觉阿里感觉速度速度速度速度洒到了关键',{
         dangerHtml: true,
+        position: "bottom",
         closeButton:{
             text: '关闭',
             // callback() {

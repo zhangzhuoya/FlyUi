@@ -6,7 +6,8 @@ export default {
         let toast = new Constructor({
             propsData: {
                 closeButton: toastOptions.closeButton,
-                dangerHtml: toastOptions.dangerHtml
+                dangerHtml: toastOptions.dangerHtml,
+                position: toastOptions.position
             }
         })
         console.log(toastOptions,'toastOptions');
