@@ -1,7 +1,11 @@
 <template>
-    <div class="toast">
-        <slot></slot>
-        <div class="line" v-if="closeButton.text"></div>
+    <div class="toast" ref="toast">
+        <div v-if="!dangerHtml">
+            <slot></slot>
+        </div>
+        <div v-else class="dangerHtml" v-html="$slots.default[0]">
+        </div>
+        <div class="line" v-if="closeButton.text" ref="line"></div>
         <div class="close" v-if="closeButton.text" @click="onClickClose" >{{closeButton.text}}</div>
     </div>
 </template>
@@ -23,6 +27,10 @@ export default {
             type: Number,
             default: 1
         },
+        dangerHtml: {
+            type: Boolean,
+            default: false
+        },
         closeButton: {
             type: Object,
             default:()=>{
@@ -34,17 +42,26 @@ export default {
         }
     },
     mounted() {
-        console.log(this.closeButton);
-        if (this.autoClose) {
-            setTimeout(()=>{
-                this.close()
-            },this.autoDelay*1000)
-        }
+        this.handleClose();
+        this.updateStyle();
     },
     methods: {
         close() {
             this.$el.remove();
             this.$destroy();
+        },
+        updateStyle(){
+            this.$nextTick(()=>{
+                console.log(this.$refs.toast.getBoundingClientRect().height,'000');
+                this.$refs.line.style.height = `${this.$refs.toast.getBoundingClientRect().height}px`
+            })
+        },
+        handleClose() {
+            if (this.autoClose) {
+                setTimeout(()=>{
+                    this.close()
+                },this.autoDelay*1000)
+            }
         },
         onClickClose() {
             if (this.closeButton?.callback && typeof this.closeButton.callback ==='function') {
@@ -62,14 +79,9 @@ export default {
   $toast-min-height: 40px;
   $toast-bg: rgba(0, 0, 0, 0.75);
   .toast {
-    font-size: $font-size; height: $toast-height; line-height: 1.8;
     font-size: $font-size; min-height: $toast-min-height; line-height: 1.8;
     position: fixed; top: 0; left: 50%; transform: translateX(-50%); display: flex;
-    color: white;
-    align-items: center;
-    background: $toast-bg;
-    border-radius: 4px;
-    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.50);
+    flex-wrap: nowrap;
     padding: 0 16px;
     color: white; align-items: center; background: $toast-bg; border-radius: 4px;
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.50); padding: 0 16px;
@@ -82,7 +94,6 @@ export default {
       cursor: pointer;
     }
     .line {
-      height: 100%;
       border-left: 1px solid #666;
       margin-left: 16px;
     }

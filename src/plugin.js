@@ -5,7 +5,8 @@ export default {
         let Constructor = Vue.extend(Toast)
         let toast = new Constructor({
             propsData: {
-                closeButton: toastOptions.closeButton 
+                closeButton: toastOptions.closeButton,
+                dangerHtml: toastOptions.dangerHtml
             }
         })
         console.log(toastOptions,'toastOptions');

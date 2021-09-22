@@ -96,7 +96,8 @@ export default {
   methods:{
     handlemessage(){
       console.log(this);
-      this.$toast(1111,{
+      this.$toast('一点点就撒开了梵蒂冈啊的冠军联<h3>ee</h3>赛的感觉爱的感觉阿里感觉速度速度速度速度洒到了关键',{
+        dangerHtml: true,
         closeButton:{
             text: '关闭',
             // callback() {
