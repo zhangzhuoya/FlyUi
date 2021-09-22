@@ -96,7 +96,14 @@ export default {
   methods:{
     handlemessage(){
       console.log(this);
-      this.$toast(1111)
+      this.$toast(1111,{
+        closeButton:{
+            text: '关闭',
+            // callback() {
+            //     // console.log('chuandi de callback');
+            // }
+        }
+          })
     }
   }
 };
