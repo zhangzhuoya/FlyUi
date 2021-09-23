@@ -51,7 +51,10 @@
   <Footer>footer</Footer>
 </Layout>
 <Toast></Toast> -->
-<Button @click="handlemessage"> dianji</Button>
+<Button @click="handlemessage">bottom</Button>
+<Button @click="CenterMessage">center</Button>
+<Button @click="TopMessage">top</Button>
+
   </div>
 </template>
 
@@ -95,17 +98,31 @@ export default {
   },
   methods:{
     handlemessage(){
-      console.log(this);
-      this.$toast(`一点点${Math.random()*100} 度速度洒到了关键`,{
+      this.$toast(`从下冒出来的toast`,{
         dangerHtml: true,
         position: "bottom",
         closeButton:{
             text: '关闭',
-            // callback() {
-            //     // console.log('chuandi de callback');
-            // }
-        }
-          })
+          }
+        })
+    },
+    CenterMessage() {
+      this.$toast(`从中间冒出来的toast`,{
+        dangerHtml: true,
+        position: "center",
+        closeButton:{
+            text: '关闭',
+          }
+        })
+    },
+    TopMessage() {
+      this.$toast(`从上面冒出来的toast`,{
+        dangerHtml: true,
+        position: "top",
+        closeButton:{
+            text: '关闭',
+          }
+        })
     }
   }
 };
