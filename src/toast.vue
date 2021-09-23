@@ -61,6 +61,7 @@ export default {
         close() {
             this.$el.remove();
             this.$destroy();
+            this.$emit('close')
         },
         updateStyle(){
             this.$nextTick(()=>{
