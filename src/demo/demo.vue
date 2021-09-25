@@ -101,8 +101,12 @@ export default {
       this.$toast(`从下冒出来的toast`,{
         dangerHtml: true,
         position: "bottom",
+        autoClose: 7,
         closeButton:{
             text: '关闭',
+            callback(){
+              console.log('eeeee');
+            }
           }
         })
     },

@@ -19,8 +19,11 @@ export default {
     name:"FlyToast",
     props: {
         autoClose: {
-            type: Boolean,
-            default: true
+            type: [Number,Boolean],
+            default: 5,
+            validator: function (value) {
+                return typeof value === false ||typeof value === 'number' || typeof value === true
+            }
         },
         autoDelay: {
             type: Number,
@@ -58,8 +61,8 @@ export default {
     methods: {
         close() {
             this.$el.remove();
-            this.$destroy();
             this.$emit('close')
+            this.$destroy();
         },
         updateStyle(){
             this.$nextTick(()=>{
@@ -70,7 +73,7 @@ export default {
             if (this.autoClose) {
                 setTimeout(()=>{
                     this.close()
-                },this.autoDelay*1000)
+                },this.autoClose *1000)
             }
         },
         onClickClose() {

@@ -27,7 +27,6 @@ describe('Input',()=>{
             }
         }).$mount()
         const inputElement = vm.$el.querySelector('input');
-        console.log(inputElement,111111111111111);
         expect(inputElement.disabled).to.equal(true);
         vm.$destroy()
     })

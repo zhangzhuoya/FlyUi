@@ -24,7 +24,6 @@ export default {
     mounted() {
         this.$children.forEach(vm=>{
             vm.gutter = this.gutter;
-            console.log(vm);
         })
     }
 
