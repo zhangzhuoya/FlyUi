@@ -3,7 +3,6 @@ let currentToast = null
 export default {
     install (Vue, options) {
       Vue.prototype.$toast = function (message,propsData) {
-        console.log(propsData,'propsData');
         if (currentToast) {
           currentToast.close()
         }
