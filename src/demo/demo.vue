@@ -60,13 +60,13 @@
         <button>设置</button>
     </template>
     <tabs-item name="girl">
-      <Icon name="settings"></Icon> 美女
+      <Icon name="loading"></Icon> 美女
     </tabs-item>
     <tabs-item name="todo" disabled>安排</tabs-item>
     <tabs-item name="news">新闻</tabs-item>
   </tabs-head>
   <tabs-body>
-    <tabs-pane name="setting">
+    <tabs-pane name="girl">
       设置相关问题
     </tabs-pane>
   </tabs-body>

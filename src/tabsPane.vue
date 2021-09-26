@@ -1,19 +1,32 @@
 <template>
-  <div class="tabs-pane">
+  <div class="tabs-pane" v-if="active">
     <slot></slot>
   </div>
 </template>
 <script>
   export default {
-    name: 'FlyTabsPane'
+    name: 'FlyTabsPane',
+    data() {
+        return {
+            active: false
+
+        }
+    },
+    inject:["eventBus"],
+    props: {
+        name: {
+            type: String| Number,
+            required: true
+        }
+    },
+    created() {
+        this.eventBus.$on('update:selected',(name)=>{
+            this.active = this.name===name;
+        })
+    }
   }
 </script>
-<style lang="scss" scoped>
-  .tabs-item {
-    flex-shrink: 0;
-    padding: 0 1em;
-    &.active {
-      background: red;
-    }
+<style>
+  .tabs-pane {
   }
 </style> 

@@ -38,7 +38,9 @@ export default {
     },
     methods: {
         xxx() {
-            this.$emit('update:seleted',this.name)
+            console.log('ee');
+            console.log(this.name);
+            this.eventBus.$emit('update:selected',this.name)
         }
 
     }
