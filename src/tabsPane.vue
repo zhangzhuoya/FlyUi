@@ -8,7 +8,12 @@
     name: 'FlyTabsPane'
   }
 </script>
-<style>
-  .tabs-pane {
+<style lang="scss" scoped>
+  .tabs-item {
+    flex-shrink: 0;
+    padding: 0 1em;
+    &.active {
+      background: red;
+    }
   }
 </style> 

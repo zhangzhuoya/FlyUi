@@ -5,8 +5,20 @@
 </template>
 
 <script>
+import Vue from 'vue'
 export default {
     name: 'FlyTabs',
+    data() {
+        return {
+            eventBus: new Vue()
+
+        }
+    },
+    provide() {
+        return {
+           eventBus: this.eventBus
+        }
+    },
     props: {
         selected: {
             type: String,
@@ -20,8 +32,9 @@ export default {
             }
         }
     },
-    created () {
+    mounted () {
       // this.$emit('update:selected', 'xxx')
+      this.eventBus.$emit('update:selected',this.selected)
     }
 }
 </script>
