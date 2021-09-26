@@ -51,10 +51,36 @@
   <Footer>footer</Footer>
 </Layout>
 <Toast></Toast> -->
-<Button @click="handlemessage">bottom</Button>
+<!-- <Button @click="handlemessage">bottom</Button>
 <Button @click="CenterMessage">center</Button>
-<Button @click="TopMessage">top</Button>
-
+<Button @click="TopMessage">top</Button> -->
+<Tabs :selected.sync="selectedTab">
+  <tabs-head>
+    <template slot="setting">
+        <button>设置</button>
+    </template>
+    <tabs-item name="girl">
+      <Icon name="settings"></Icon> 美女
+    </tabs-item>
+    <tabs-item name="todo" disabled>安排</tabs-item>
+    <tabs-item name="news">新闻</tabs-item>
+  </tabs-head>
+  <tabs-body>
+    <tabs-pane name="setting">
+      设置相关问题
+    </tabs-pane>
+  </tabs-body>
+  <tabs-body>
+    <tabs-pane name="todo">
+      安排相关问题
+    </tabs-pane>
+  </tabs-body>
+  <tabs-body>
+    <tabs-pane name="news">
+      新闻相关问题
+    </tabs-pane>
+  </tabs-body>
+</Tabs>
   </div>
 </template>
 
@@ -71,7 +97,13 @@ import Content from '@/content.vue'
 import Layout from '@/layout.vue';
 import Toast from '@/toast.vue'
 import plugin from '@/plugin';
+import Icon from '@/icon.vue'
 import Vue from 'vue'
+import Tabs from '@/tabs.vue'
+import TabsBody from '@/tabsBody.vue'
+import TabsHead from'@/tabsHead.vue'
+import TabsItem from '@/tabsItem.vue'
+import TabsPane from '@/tabsPane.vue'
 Vue.use(plugin)
 
 export default {
@@ -81,16 +113,23 @@ export default {
     Input,
     FCol,
     FRow,
+    Icon,
     Footer,
     Header,
     Aside,
     Content,
     Layout,
-    Toast
+    Toast,
+    Tabs,
+    TabsBody,
+    TabsHead,
+    TabsItem,
+    TabsPane
   },
   data() {
     return {
-      message:""
+      message:"",
+      selectedTab: "news"
     }
   },
   mounted() {
