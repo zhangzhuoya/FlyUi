@@ -81,10 +81,12 @@
     </tabs-pane>
   </tabs-body>
 </Tabs> -->
-  <div style="margin-top:50px;margin-left:20px">
+  <div style="margin-top:50px;margin-left:20px;border:1px solid green;overflow:hidden">
+    <div style="width:100%;height:30px;border: 1px solid red;background: green">hahhkfhafh </div>
  <popover>
     <template slot="content">
       <div>hhhhhh</div>
+      <div>df</div>
     </template>
     <template>
       <Button>点我</Button>
