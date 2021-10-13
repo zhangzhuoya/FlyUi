@@ -81,8 +81,8 @@
     </tabs-pane>
   </tabs-body>
 </Tabs> -->
-  <div style="margin-top:50px;margin-left:20px;border:1px solid green;overflow:hidden">
-    <div style="width:100%;height:30px;border: 1px solid red;background: green">hahhkfhafh </div>
+  <div @click="hh" style="margin-top:50px;margin-left:20px;border:1px solid green;">
+    <div   style="width:100%;height:30px;border: 1px solid red;background: green">hahhkfhafh </div>
  <popover>
     <template slot="content">
       <div>hhhhhh</div>
@@ -151,6 +151,9 @@ export default {
     // console.log(this.$toast());
   },
   methods:{
+    hh(){
+console.log(this);
+    },
     handlemessage(){
       this.$toast(`从下冒出来的toast`,{
         dangerHtml: true,
