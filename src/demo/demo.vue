@@ -54,7 +54,7 @@
 <!-- <Button @click="handlemessage">bottom</Button>
 <Button @click="CenterMessage">center</Button>
 <Button @click="TopMessage">top</Button> -->
-<Tabs :selected.sync="selectedTab">
+<!-- <Tabs :selected.sync="selectedTab">
   <tabs-head>
     <template slot="setting">
         <button>设置</button>
@@ -80,12 +80,22 @@
       新闻相关问题
     </tabs-pane>
   </tabs-body>
-</Tabs>
+</Tabs> -->
+  <div style="margin-top:50px;margin-left:20px">
+ <popover>
+    <template slot="content">
+      <div>hhhhhh</div>
+    </template>
+    <template>
+      <Button>点我</Button>
+    </template>
+  </popover>
+  </div>
+ 
   </div>
 </template>
 
 <script>
-import Button from "@/button.vue";
 import ButtonGroup from "@/buttonGroup.vue";
 import Input from '@/input.vue'
 import FCol from '@/col.vue'
@@ -93,7 +103,7 @@ import FRow from '@/row.vue'
 import Footer from '@/footer.vue'
 import Header from '@/header.vue'
 import Aside from '@/aside.vue'
-import Content from '@/content.vue'
+import Content from '@/content.vue' 
 import Layout from '@/layout.vue';
 import Toast from '@/toast.vue'
 import plugin from '@/plugin';
@@ -104,6 +114,8 @@ import TabsBody from '@/tabsBody.vue'
 import TabsHead from'@/tabsHead.vue'
 import TabsItem from '@/tabsItem.vue'
 import TabsPane from '@/tabsPane.vue'
+import Popover from '@/popover.vue'
+import Button from '@/button.vue';
 Vue.use(plugin)
 
 export default {
@@ -124,7 +136,8 @@ export default {
     TabsBody,
     TabsHead,
     TabsItem,
-    TabsPane
+    TabsPane,
+    Popover
   },
   data() {
     return {
